@@ -42,10 +42,10 @@ Splunk was selected to minimize long-term platform toil while enabling rapid SLO
 **Principal Theme:** Executive influence, hybrid strategy, business-aligned adoption
 
 ### Situation (Scale & Context)
-uShip, a high-volume online shipping marketplace, operated a hybrid environment with workloads across AWS (EC2, RDS Oracle, Lambda, Kinesis) and on-prem RHEL systems. Fragmented observability impacted reliability of the customer-facing scheduling portal.
+uShip (AWS Customer), a high-volume online shipping marketplace, operated a hybrid environment with workloads across AWS (EC2, RDS Oracle, Lambda, Kinesis) and on-prem RHEL systems. Fragmented observability impacted reliability of the customer-facing scheduling portal.
 
 ### Task (Principal Scope)
-Drive an **exec-level observability decision** that reduced hybrid blind spots and protected customer-facing reliability SLOs.
+As a AWS Solutions Architect, I was brought in to drive an **exec-level observability decision** that reduced hybrid blind spots and protected customer-facing reliability SLOs.
 
 ### Actions (Influence & Framing)
 - Reframed discussions around **business SLOs**, not tooling
