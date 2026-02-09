@@ -20,3 +20,6 @@ The solution improved confidence in production operations, enabled proactive det
 | Latency (p95) | < 400 ms |
 | Data Freshness | < 2 minutes lag |
 | Detection | MTTD < 3 minutes |
+
+## Architecture – Bottom-Up Design
+![AT&T Observability Whiteboard – Story 1](https://raw.githubusercontent.com/ams-thakkar/observability/main/observability_whiteboard_story2.png)
