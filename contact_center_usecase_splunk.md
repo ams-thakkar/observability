@@ -20,3 +20,6 @@ Bell gained real-time visibility into CX and agent efficiency, enabling faster r
 | IVR Latency (p95) | < 250 ms |
 | Chatbot Containment | ≥ 85% |
 | Agent Desktop Latency (p95) | < 500 ms |
+
+## Architecture – Bottom-Up Design
+![AT&T Observability Whiteboard – Story 1](https://raw.githubusercontent.com/ams-thakkar/observability/main/observability_whiteboard_story3.png)
