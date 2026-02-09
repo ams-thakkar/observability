@@ -1,131 +1,259 @@
-# Observability & Customer Success Work Stories (STAR Format)
+# Principal-Level Observability & Customer Success Stories
+**Focus:** Scale, impact, cross-org ownership, and durable mechanisms  
+**Target Role:** Principal Observability Customer Success Specialist (AWS)
 
 ---
 
 ## Story 1 – AT&T Central Platform Observability (Splunk vs ELK)
+**Principal Theme:** Enterprise platform strategy, SLO-driven decisioning, ownership without authority
 
-### Situation
-At AT&T, I was part of the Office of the CTO Central Platform Engineering team responsible for observability for two newly built, customer-facing microservices platforms: the Knowledge Management system (`att.com/support`) and Search & Discovery (`att.com/search`). These platforms served ~20 million external customers with ~100 million daily visits. The existing monitoring solution was an agent-based APM tool (Wily Introscope), which provided basic JVM metrics but was not designed for modern, distributed microservices architectures.
+### Situation (Scale & Context)
+At AT&T, I was part of the Office of the CTO Central Platform Engineering team responsible for observability for two tier-0, customer-facing microservices platforms: Knowledge Management (`att.com/support`) and Search & Discovery (`att.com/search`). These platforms served ~20M customers and ~100M daily visits. The incumbent agent-based APM solution (Wily Introscope) provided JVM-level metrics but could not support distributed, customer-facing microservices at scale.
 
-### Task
-My responsibility was to define and lead the design of a modern observability strategy that could scale with high traffic, support distributed tracing, and provide meaningful service-level visibility—while balancing cost, operational overhead, and time-to-production.
+### Task (Principal Scope)
+Define an **enterprise observability strategy** anchored on customer outcomes, influence Director- and VP-level leadership, and balance cost, time-to-value, and long-term operational ownership—without direct authority over application teams.
 
-### Actions
-I started by defining **clear SLIs and SLOs** aligned to customer experience rather than tool capabilities. Based on these requirements, I proposed and led two parallel proofs of concept:
-- An in-house **ELK-based solution**
-- An enterprise **Splunk-based solution**
+### Actions (Mechanisms & Leverage)
+- Defined **customer-aligned SLIs and SLOs** before evaluating tools
+- Ran **parallel POCs** for an in-house ELK stack and an enterprise Splunk solution
+- Built a decision framework evaluating scalability, SLO operability, app-team adoption, and long-term operational toil
+- Partnered with Splunk Solution Architects post-POC to validate production readiness and operating models
 
-I built a comparative analysis covering scalability, operational burden, cost, learning curve, and long-term sustainability. I also partnered with Splunk Solution Architects post-POC to validate production readiness.
-
-### Results
-Leadership selected Splunk due to faster time-to-value, lower operational overhead, and ease of adoption. The solution enabled SLO-based alerting, faster detection and recovery, and earned trust across application and platform teams.
-
-### Key SLOs Defined
+### Key SLOs
 
 | SLO Category | Objective |
-|-------------|-----------|
-| Availability | 99.9% successful request rate for customer-facing APIs |
-| Latency (p95) | < 300 ms for search queries |
-| Latency (p99) | < 750 ms during peak traffic |
-| Error Rate | < 0.1% 5xx errors across core microservices |
-| Detection | Mean Time to Detect (MTTD) < 5 minutes |
+|---|---|
+| Availability | 99.9% successful request rate |
+| Latency (p95) | < 300 ms |
+| Latency (p99) | < 750 ms (peak) |
+| Error Rate | < 0.1% 5xx |
+| Detection (MTTD) | < 5 minutes |
+
+### Results (Enterprise Impact)
+Splunk was selected to minimize long-term platform toil while enabling rapid SLO adoption. Outcomes included faster detection and recovery, consistent SLO dashboards across tier-0 systems, and increased trust from application teams and executive leadership.
+
+### Stakeholders
+**Internal:** CTO org (Directors/VPs), Platform Engineering, App teams, SRE/Ops  
+**External:** Splunk Solution Architects, Splunk account leadership
 
 ---
 
-## Story 2 – uShip Hybrid Observability (Datadog + AWS)
+## Story 2 – uShip Hybrid Observability (Datadog vs CloudWatch)
+**Principal Theme:** Executive influence, hybrid strategy, business-aligned adoption
 
-### Situation
-uShip, an online shipping marketplace for freight and heavy equipment, operated in a hybrid environment with workloads across AWS (EC2, RDS Oracle, Lambda, Kinesis) and on-prem RHEL servers. Fragmented observability impacted reliability of their customer-facing scheduling portal.
+### Situation (Scale & Context)
+uShip, a high-volume online shipping marketplace, operated a hybrid environment with workloads across AWS (EC2, RDS Oracle, Lambda, Kinesis) and on-prem RHEL systems. Fragmented observability impacted reliability of the customer-facing scheduling portal.
 
-### Task
-My role was to design a unified observability solution and justify the approach to a VP-level audience, balancing cost, reliability, and hybrid visibility.
+### Task (Principal Scope)
+Drive an **exec-level observability decision** that reduced hybrid blind spots and protected customer-facing reliability SLOs.
 
-### Actions
-I led executive discussions focused on **business-critical SLOs** tied to scheduling reliability and demand–supply matching. I proposed a **Datadog-based single-pane-of-glass solution**, led an onsite workshop, and executed a custom POC validating hybrid observability.
+### Actions (Influence & Framing)
+- Reframed discussions around **business SLOs**, not tooling
+- Evaluated CloudWatch vs Datadog against hybrid correlation and SLO coverage
+- Led an executive workshop and a custom hybrid POC
 
-### Results
-The solution improved confidence in production operations, enabled proactive detection of SLO breaches, and accelerated adoption through clear alignment with business outcomes.
-
-### Key SLOs Defined
+### Key SLOs
 
 | SLO Category | Objective |
-|-------------|-----------|
-| Scheduling Availability | 99.95% availability of the scheduling portal |
-| Latency (p95) | < 400 ms for quote generation and scheduling APIs |
-| Data Freshness | < 2 minutes lag in demand–supply matching pipelines |
-| Detection | MTTD < 3 minutes for customer-visible failures |
+|---|---|
+| Scheduling Availability | 99.95% |
+| API Latency (p95) | < 400 ms |
+| Data Freshness | < 2 minutes |
+| Detection (MTTD) | < 3 minutes |
+
+### Results (Business Impact)
+Datadog was selected to provide a single pane of glass across hybrid systems, enabling proactive SLO breach detection and restoring executive confidence in operational readiness.
+
+### Stakeholders
+**Internal:** SHI architects, AWS account team  
+**External:** uShip VP Engineering/Technology, App teams, Ops/on-call teams
 
 ---
 
-## Story 3 – Bell Canada Contact Center Observability
+## Story 3 – Bell Canada Contact Center Observability (CX-Driven)
+**Principal Theme:** CX-first observability, multi-domain correlation
 
-### Situation
-Bell Canada operated a large-scale contact center platform with telemetry from RDS SQL Server, Redshift, S3, IVR systems, chatbots, network devices, and agent desktops. While Bell already used Splunk, observability data was fragmented and underutilized.
+### Situation (Scale & Context)
+Bell Canada operated a large contact center platform with telemetry across IVR systems, chatbots, agent desktops, network infrastructure, and AWS data stores (RDS, Redshift, S3). Observability existed but was disconnected from customer experience.
 
-### Task
-I was responsible for designing an observability architecture that unified telemetry into actionable insights focused on customer experience and agent productivity.
+### Task (Principal Scope)
+Redefine observability around **customer experience SLOs** and align engineering, operations, and business stakeholders.
 
-### Actions
-I worked with stakeholders to define **experience-driven SLOs** and designed a Splunk ingestion strategy on AWS that correlated infrastructure, application, and customer interaction data.
+### Actions (Systems Thinking)
+- Defined CX-driven SLOs across the end-to-end customer journey
+- Designed correlation strategy using call/session IDs
+- Unified infrastructure, application, and CX telemetry using existing Splunk investments
 
-### Results
-Bell gained real-time visibility into CX and agent efficiency, enabling faster remediation and better operational decision-making without adding new tooling complexity.
-
-### Key SLOs Defined
+### Key SLOs
 
 | SLO Category | Objective |
-|-------------|-----------|
-| Call Routing Success | ≥ 99% successful IVR call routing |
-| IVR Latency (p95) | < 250 ms response time |
-| Chatbot Containment | ≥ 85% interactions resolved without human handoff |
-| Agent Desktop Latency (p95) | < 500 ms for core agent workflows |
+|---|---|
+| Call Routing Success | ≥ 99% |
+| IVR Latency (p95) | < 250 ms |
+| Chatbot Containment | ≥ 85% |
+| Agent Desktop Latency (p95) | < 500 ms |
+
+### Results (Organizational Impact)
+Shifted operations from system health monitoring to **end-to-end CX visibility**, enabling faster remediation of customer-impacting issues without introducing additional tooling sprawl.
+
+### Stakeholders
+**Internal:** AWS account & SA teams  
+**External:** Bell contact center engineering, Network Ops, CX/business leaders
 
 ---
 
 ## Story 4 – BMO CardTech OpenTelemetry Adoption
+**Principal Theme:** Standardization, future-proofing, ecosystem leverage
 
-### Situation
-At BMO’s CardTech division, teams relied on fragmented tooling (CloudWatch logs and Dynatrace), leading to inconsistency, vendor lock-in, and limited extensibility.
+### Situation (Scale & Context)
+BMO CardTech teams used fragmented observability tooling (CloudWatch + Dynatrace), leading to inconsistent telemetry and vendor lock-in.
 
-### Task
-My goal was to modernize observability using a standardized, vendor-neutral approach that supported future automation and AIOps initiatives.
+### Task (Principal Scope)
+Establish a **durable observability foundation** that scaled across teams and supported future AIOps and reliability initiatives.
 
-### Actions
-I led adoption of **OpenTelemetry (OTel)** as the standard telemetry layer, enabling consistent collection of traces, metrics, and logs across services while preserving backend flexibility.
+### Actions (Strategic Enablement)
+- Introduced **OpenTelemetry** as the standard telemetry abstraction
+- Defined common schemas for metrics, traces, and logs
+- Enabled backend independence while preserving consistent SLO measurement
 
-### Results
-Teams achieved consistent SLO measurement, reduced tooling fragmentation, and created a strong foundation for future AIOps and reliability automation.
-
-### Key SLOs Defined
+### Key SLOs
 
 | SLO Category | Objective |
-|-------------|-----------|
-| Service Availability | 99.9% availability for card transaction services |
-| Latency (p95) | < 200 ms for authorization and validation APIs |
-| Error Budget | Error budget consumption used as a release gating signal |
+|---|---|
+| Service Availability | 99.9% |
+| API Latency (p95) | < 200 ms |
+| Error Budget Policy | Error budget burn used as release gate |
+
+### Results (Durable Value)
+Reduced vendor lock-in, improved interoperability, and positioned the organization for advanced analytics and AIOps.
+
+### Stakeholders
+**Internal:** CardTech app teams, Platform/SRE, Architecture leadership  
+**External:** Observability vendor technical teams (as needed)
 
 ---
 
-## Story 5 – AIOps for MTTR Reduction
+## Story 5 – Principal Architect Impact at Scale: Bank of Montreal (BMO)
+**Principal Theme:** Multi-threaded ownership, executive influence, material revenue impact
 
-### Situation
-Engineering teams struggled with high MTTR due to fragmented runbooks, historical tickets, and unstructured operational knowledge.
+### Situation (Scale & Context)
+BMO was already the **largest AWS customer in Canada by consumption**, with multiple high-impact migration initiatives running in parallel across data, end-user computing, and infrastructure.
 
-### Task
-I led the design of an in-house **AIOps solution** to improve incident response effectiveness and reduce MTTR at scale.
-
-### Actions
-We trained an AI model using SOPs, runbooks, and historical ticket data, leveraging **Claude on Amazon Bedrock** and fine-tuning with CloudWatch logs. The system surfaced contextual recommendations during incidents.
-
-### Results
-The solution delivered **5–30% YoY MTTR improvement across 20 teams**, shifting incident response from reactive troubleshooting to AI-assisted decision-making.
-
-### Key SLOs Defined
-
-| SLO Category | Objective |
-|-------------|-----------|
-| MTTR Reduction | ≥ 20% YoY reduction target |
-| Triage Time | < 10 minutes to actionable recommendation |
-| Knowledge Retrieval | < 30 seconds to surface relevant SOPs/runbooks |
+### Task (Principal Scope)
+Act as a **force multiplier** across the account by driving multiple parallel migrations, aligning AWS service teams, ProServe, partners, and account leadership, and translating technical initiatives into ROI-driven executive decisions.
 
 ---
+
+### Workstream 1: Teradata → Amazon Redshift
+
+#### Actions
+- Coordinated with **AWS Redshift service team leadership**
+- Led **ROI/TCO presentations** with BMO Directors and AWS Account team
+- Scoped and demoed a production-grade POC with **AWS ProServe**
+- Onboarded ProServe delivery teams and removed execution blockers
+
+#### SLOs / Success Metrics
+
+| Category | Objective |
+|---|---|
+| Commercial Impact | >$800K AWS consumption over 3 years |
+| Migration Confidence | POC meets performance & cost benchmarks |
+| Time to Commitment | Executive commitment post-POC |
+
+#### Results
+BMO committed to the Redshift migration, unlocking **>$800K in projected AWS consumption** and establishing a strategic data modernization path.
+
+---
+
+### Workstream 2: Citrix → AWS WorkSpaces
+
+#### Actions
+- Led discussions with **BMO senior SRE stakeholders**
+- Engaged AWS EUC specialists for demos and workshops
+- Mentored a **L6 Solutions Architect** to scale internal execution
+- Led Citrix-on-AWS vs WorkSpaces analysis and cost modeling
+
+#### SLOs / Success Metrics
+
+| Category | Objective |
+|---|---|
+| Pilot Scope | 30 WorkSpaces |
+| Contract Leverage | Reduce Citrix renewal from 3 years → 1 year |
+| Enablement | L6 SA independently driving follow-ups |
+
+#### Results
+BMO committed to a **30-user WorkSpaces pilot** and limited their Citrix renewal, creating strategic optionality for EUC modernization.
+
+---
+
+### Workstream 3: Windows Server Migration & EDP Modeling
+
+#### Actions
+- Built cost models for migrating **1,400+ Windows servers** to EC2
+- Designed RI + On-Demand + SPOT strategy
+- Integrated models into **AWS Enterprise Discount Program (EDP)** negotiations
+
+#### SLOs / Success Metrics
+
+| Category | Objective |
+|---|---|
+| Migration Scope | 1,400+ servers |
+| Cost Optimization | Optimized RI/OD/SPOT mix |
+| GTM Alignment | Included in EDP |
+
+#### Results
+The analysis directly supported **BMO signing an $11M AWS EDP**.
+
+---
+
+### Overall Results & Recognition
+- Enabled multiple parallel migrations across data, EUC, and infrastructure
+- Influenced Director-level BMO stakeholders
+- Drove **>$800K in committed workload consumption**
+- Contributed materially to **$11M AWS EDP signing**
+- Mentored and up-leveled a senior SA
+- Awarded the **#OneTeam Award** by **AWS VP of Sales Greg Pearson** at AWS SKO, alongside the AWS Account team
+
+### Stakeholders
+**Internal (AWS):** Account team, Redshift leadership, EUC specialists, ProServe, Partner teams, L6 SA  
+**External (BMO):** Directors, Senior SREs, Data & App teams, EUC stakeholders
+
+---
+
+## Story 6 – AIOps for MTTR Reduction
+**Principal Theme:** Automation at scale, measurable outcomes
+
+### Situation (Scale & Context)
+High MTTR across multiple teams due to fragmented operational knowledge (runbooks, tickets, logs).
+
+### Task (Principal Scope)
+Design and roll out an **AIOps capability** that reduced MTTR while maintaining trust and safety.
+
+### Actions
+- Built AI-assisted incident response using **Claude on Amazon Bedrock**
+- Grounded outputs in SOPs, historical tickets, and CloudWatch logs
+- Implemented confidence scoring and feedback loops
+
+### Key SLOs
+
+| SLO Category | Objective |
+|---|---|
+| MTTR Reduction | ≥ 20% YoY |
+| Incident Triage | < 10 minutes |
+| Knowledge Retrieval | < 30 seconds |
+
+### Results
+Delivered **5–30% YoY MTTR reduction across 20 teams**, shifting operations to AI-assisted decisioning.
+
+### Stakeholders
+**Internal:** 20+ app teams, SRE/Ops leadership, Platform & Security  
+**External:** AWS Bedrock service teams
+
+---
+
+## Why This Signals Principal (L7)
+- Explicit **SLO ownership** tied to business and CX outcomes  
+- **Account-level and enterprise-scale impact**  
+- Multi-threaded execution with **measurable revenue influence**  
+- Demonstrated **leverage through others**  
+- External recognition reinforcing **Earn Trust and Deliver Results**
