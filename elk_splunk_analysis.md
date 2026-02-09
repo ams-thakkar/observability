@@ -1,47 +1,32 @@
-# Designing and Implementing an ELK stack for support (KANA)
+# Story 1 – AT&T Central Platform Observability (Splunk vs ELK)
 
-**Summary**
+## Situation
 
-The Knowledge Management System (KANA KMS) supporting att.com/support is a mission-critical Tier-1 platform enabling self-service and assisted support for ~20M external customers, 10K+ support agents, and 60+ content authors. Any degradation in availability, latency, or accuracy directly impacts customer satisfaction, call volumes, and operational cost.
+At AT&T, I was part of the Office of the CTO Central Platform Engineering team responsible for observability for two newly built, customer-facing microservices platforms: the Knowledge Management system (`att.com/support`) and Search & Discovery (`att.com/search`). These platforms served ~20 million external customers with ~100 million daily visits. The existing monitoring solution was an agent-based APM tool (Wily Introscope), which provided basic JVM metrics but was not designed for modern, distributed microservices architectures.
 
-This observability initiative was architected to shift the platform from reactive monitoring to customer-experience assurance, ensuring reliability could be measured, governed, and improved at scale.
+## Task
+My responsibility was to define and lead the design of a modern observability strategy that could scale with high traffic, support distributed tracing, and provide meaningful service-level visibility—while balancing cost, operational overhead, and time-to-production.
 
-The solution was intentionally designed around Service Level Objectives (SLOs) and business outcomes, not tooling, enabling leadership to understand customer impact, not just system health.
+## Actions
+I started by defining **clear SLIs and SLOs** aligned to customer experience rather than tool capabilities. Based on these requirements, I proposed and led two parallel proofs of concept:
+- An in-house **ELK-based solution**
+- An enterprise **Splunk-based solution**
 
-**Context & Business Problem Statement**
+I built a comparative analysis covering scalability, operational burden, cost, learning curve, and long-term sustainability. I partnered closely with Splunk Solution Architects post-POC to validate production readiness.
 
-The current KMS platform relies on a legacy, agent-based APM solution (Wily Introscope) as its primary monitoring tool. While it provided basic JVM-level visibility, it was not designed to support modern, customer-facing, microservice-based architecture that the new KANA KMS system is built on. 
+## Results
+Leadership selected Splunk due to faster time-to-value, lower operational overhead, and ease of adoption. The solution enabled SLO-based alerting, faster detection and recovery, and earned trust across application and platform teams.
 
-**Application**: KANA Knowledge Management System (KMS)
+## Key SLOs
 
-**Frontend**: att.com/support (public-facing UX)
+| SLO Category | Objective |
+|-------------|-----------|
+| Availability | 99.9% successful request rate |
+| Latency (p95) | < 300 ms for search queries |
+| Latency (p99) | < 750 ms during peak |
+| Error Rate | < 0.1% 5xx errors |
+| Detection | MTTD < 5 minutes |
 
-**Backend**: On-prem application tier + Oracle Database
 
-**User Scale:**
-
-- 45 internal content authors
-
-- 10K internal support agents
-
-- 20M external customers (Mobility + U-Verse)
-
-**Business Criticality**
-
-- Tier-1 customer support dependency
-
-- Direct impact on:
-
-- Call deflection
-
-- Average Handle Time (AHT)
-
-- Customer Satisfaction (CSAT)
-
-- Brand trust and revenue protection
-
-**How Observability Was Orchestrated (High Level)**
-
-1. Observability as a Platform Standard
-   - All Spring microservices were required to adopt a shared observability framework
-2. 
+## Architecture – Bottom-Up Design
+![AT&T Observability Whiteboard – Story 1](https://raw.githubusercontent.com/ams-thakkar/observability/main/observability_whiteboard_story1.png)
