@@ -1,11 +1,10 @@
----
 
 ## Tech Evangelism, Thought Leadership & Field Impact
 **Principal Theme:** Influence at scale, field enablement, external credibility, and community leadership
 
 In addition to direct customer delivery, I have consistently operated as a **technical evangelist and thought leader**, amplifying AWS strategy and best practices across customers, partners, and internal technical communities. This work has focused on **modern application development, CI/CD, cloud economics, observability-adjacent practices, and developer experience**, with measurable reach across global AWS audiences.
 
----
+
 
 ### 1. Speaking & Technical Sessions at AWS Flagship Events
 
