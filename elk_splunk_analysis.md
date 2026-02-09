@@ -30,3 +30,18 @@ Leadership selected Splunk due to faster time-to-value, lower operational overhe
 
 ## Architecture – Bottom-Up Design
 ![AT&T Observability Whiteboard – Story 1](https://raw.githubusercontent.com/ams-thakkar/observability/main/observability_whiteboard_story1.png)
+
+## Decision Tradeoff (Critical Part)
+The following table summarizes the tradeoffs evaluated during the platform decision:
+
+| Dimension           | ELK (In-house) | Splunk (Enterprise) |
+|---------------------|---------------|---------------------|
+| Time to Value       | Slow          | Fast                |
+| Operational Overhead| High          | Low                 |
+| Customization       | High          | Medium              |
+| App Team Adoption   | Lower         | Higher              |
+| Long-term Toil      | High          | Lower               |
+
+**Decision Rationale:**  
+ELK optimized for flexibility, while Splunk optimized for sustainable ownership and faster SLO operationalization at scale. Given the customer traffic and reliability requirements, minimizing long-term operational toil was the deciding factor.
+
