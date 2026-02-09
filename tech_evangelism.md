@@ -74,8 +74,8 @@ Provided customers with a repeatable, production-grade pattern for shifting secu
 ### 4. AWS Technical Field Community Leadership
 
 - **Member:** AWS **Next Gen Developer Experience (NGDE)** – Technical Field Community (TFC)  
-  - Participated in shaping **developer experience, tooling feedback, and field enablement**  
-  - Collaborated with senior technologists across AWS to influence internal and external developer-facing initiatives  
+  - **CI/CD, DevOps** key areas of focus. 
+  - Worked through the *specreq* model of engagement with AWS Teams and customers.
 
 **Impact:**  
 Helped amplify field feedback into product and experience discussions, improving alignment between AWS services and real-world developer needs.
