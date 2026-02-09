@@ -23,3 +23,20 @@ The solution improved confidence in production operations, enabled proactive det
 
 ## Architecture – Bottom-Up Design
 ![AT&T Observability Whiteboard – Story 1](https://raw.githubusercontent.com/ams-thakkar/observability/main/observability_whiteboard_story2.png)
+
+## Decision Tradeoff – Datadog vs CloudWatch
+The following tradeoffs were evaluated to determine the best observability platform for a **hybrid (AWS + on-prem)** environment supporting a customer-facing scheduling portal:
+
+| Dimension | CloudWatch (AWS-Native) | Datadog (SaaS Observability) |
+|---------|-------------------------|------------------------------|
+| Environment Coverage | Strong for AWS services | Strong across AWS + on-prem |
+| Time to Value | Fast for AWS workloads | Fast across hybrid workloads |
+| Operational Overhead | Low (fully managed) | Low (SaaS-managed) |
+| Cross-Environment Correlation | Limited without custom glue | Native, out-of-the-box |
+| Executive Visibility | Good (AWS-centric) | Strong (unified dashboards) |
+| Cost Model | Usage-based | License + usage |
+| Customization | Medium | Medium |
+| Vendor Lock-in | AWS-centric | Third-party dependency |
+
+**Decision Rationale:**  
+CloudWatch provided excellent AWS-native visibility, but Datadog delivered a true **single pane of glass** across cloud and on-prem systems. Given the customer’s hybrid architecture and customer-facing SLOs, reducing cognitive load and improving cross-environment correlation outweighed the additional licensing cost.
