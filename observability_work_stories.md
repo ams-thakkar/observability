@@ -65,8 +65,8 @@ Drive an **exec-level observability decision** that reduced hybrid blind spots a
 Datadog was selected to provide a single pane of glass across hybrid systems, enabling proactive SLO breach detection and restoring executive confidence in operational readiness.
 
 ### Stakeholders
-**Internal:** SHI architects, AWS account team  
-**External:** uShip VP Engineering/Technology, App teams, Ops/on-call teams
+**Internal:** AWS account team, AWS Partner team
+**External:** SHI architects, uShip VP Engineering/Technology, App teams, Ops team
 
 ---
 
@@ -97,7 +97,7 @@ Redefine observability around **customer experience SLOs** and align engineering
 Shifted operations from system health monitoring to **end-to-end CX visibility**, enabling faster remediation of customer-impacting issues without introducing additional tooling sprawl.
 
 ### Stakeholders
-**Internal:** AWS account & SA teams  
+**Internal:** AWS account team, Technical Account Manager (TAM)
 **External:** Bell contact center engineering, Network Ops, CX/business leaders
 
 ---
@@ -128,12 +128,42 @@ Establish a **durable observability foundation** that scaled across teams and su
 Reduced vendor lock-in, improved interoperability, and positioned the organization for advanced analytics and AIOps.
 
 ### Stakeholders
-**Internal:** CardTech app teams, Platform/SRE, Architecture leadership  
-**External:** Observability vendor technical teams (as needed)
+**Internal:**  AWS Account Team, AWS BD Specialist
+**External:** CardTech app teams, Sr. Principal of Card Tech Platform
 
 ---
 
-## Story 5 – Principal Architect Impact at Scale: Bank of Montreal (BMO)
+## Story 5 – AIOps for MTTR Reduction
+**Principal Theme:** Automation at scale, measurable outcomes
+
+### Situation (Scale & Context)
+High MTTR across multiple teams due to fragmented operational knowledge (runbooks, tickets, logs).
+
+### Task (Principal Scope)
+Design and roll out an **AIOps capability** that reduced MTTR while maintaining trust and safety.
+
+### Actions
+- Built AI-assisted incident response using **Claude on Amazon Bedrock**
+- Grounded outputs in SOPs, historical tickets, and CloudWatch logs
+- Implemented confidence scoring and feedback loops
+
+### Key SLOs
+
+| SLO Category | Objective |
+|---|---|
+| MTTR Reduction | ≥ 20% YoY |
+| Incident Triage | < 10 minutes |
+| Knowledge Retrieval | < 30 seconds |
+
+### Results
+Delivered **5–30% YoY MTTR reduction across 20 teams**, shifting operations to AI-assisted decisioning.
+
+### Stakeholders
+**Internal:** 20+ app teams, Principal Engineer, Program Managers  
+
+---
+
+## Story 6 – Principal Architect Impact at Scale: Bank of Montreal (BMO)
 **Principal Theme:** Multi-threaded ownership, executive influence, material revenue impact
 
 ### Situation (Scale & Context)
@@ -215,39 +245,8 @@ The analysis directly supported **BMO signing an $11M AWS EDP**.
 - Awarded the **#OneTeam Award** by **AWS VP of Sales Greg Pearson** at AWS SKO, alongside the AWS Account team
 
 ### Stakeholders
-**Internal (AWS):** Account team, Redshift leadership, EUC specialists, ProServe, Partner teams, L6 SA  
-**External (BMO):** Directors, Senior SREs, Data & App teams, EUC stakeholders
-
----
-
-## Story 6 – AIOps for MTTR Reduction
-**Principal Theme:** Automation at scale, measurable outcomes
-
-### Situation (Scale & Context)
-High MTTR across multiple teams due to fragmented operational knowledge (runbooks, tickets, logs).
-
-### Task (Principal Scope)
-Design and roll out an **AIOps capability** that reduced MTTR while maintaining trust and safety.
-
-### Actions
-- Built AI-assisted incident response using **Claude on Amazon Bedrock**
-- Grounded outputs in SOPs, historical tickets, and CloudWatch logs
-- Implemented confidence scoring and feedback loops
-
-### Key SLOs
-
-| SLO Category | Objective |
-|---|---|
-| MTTR Reduction | ≥ 20% YoY |
-| Incident Triage | < 10 minutes |
-| Knowledge Retrieval | < 30 seconds |
-
-### Results
-Delivered **5–30% YoY MTTR reduction across 20 teams**, shifting operations to AI-assisted decisioning.
-
-### Stakeholders
-**Internal:** 20+ app teams, SRE/Ops leadership, Platform & Security  
-**External:** AWS Bedrock service teams
+**Internal (AWS):** AWS Account team, Redshift leadership, EUC specialists, AWS ProServe, Partner team, other SAs, Customer Success  
+**External (BMO):** Tech Directors, Senior SREs, Data & App teams, Business stakeholders
 
 ---
 
